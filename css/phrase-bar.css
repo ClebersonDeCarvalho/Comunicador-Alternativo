@@ -1,0 +1,226 @@
+.phrase-bar {
+  background: var(--surface);
+  border-radius: var(--radius);
+  margin: 8px 12px 0;
+  padding: 12px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 80px;
+}
+
+.tokens-list {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  min-height: 52px;
+}
+
+.empty-message {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  align-self: center;
+}
+
+.token {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 6px 12px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: default;
+  animation: popIn 0.18s cubic-bezier(0.4, 2, 0.6, 1) both;
+  transition: transform 0.1s;
+}
+
+.token:hover {
+  transform: scale(1.04);
+}
+
+.token .token-image {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.token .remove-btn {
+  background: var(--limpar);
+  border: none;
+  color: var(--limpar-text);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  margin-left: 2px;
+  transition: background 0.15s;
+}
+
+.token .remove-btn:hover {
+  background: var(--limpar-hover);
+}
+
+.token.cat-simnao {
+  background: var(--c-simnao-bg);
+  color: var(--c-simnao);
+  border: 1.5px solid var(--c-simnao);
+}
+
+.token.cat-alimentos {
+  background: var(--c-alimentos-bg);
+  color: var(--c-alimentos);
+  border: 1.5px solid var(--c-alimentos);
+}
+
+.token.cat-sentimentos {
+  background: var(--c-sentimentos-bg);
+  color: var(--c-sentimentos);
+  border: 1.5px solid var(--c-sentimentos);
+}
+
+.token.cat-acoes {
+  background: var(--c-acoes-bg);
+  color: var(--c-acoes);
+  border: 1.5px solid var(--c-acoes);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.speak-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  background: var(--falar);
+  border: none;
+  border-radius: 50px;
+  color: var(--falar-text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.12s, box-shadow 0.12s, opacity 0.15s;
+  box-shadow: 0 4px 18px var(--falar-sombra);
+}
+
+.speak-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px var(--falar-sombra-hover);
+}
+
+.speak-btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.speak-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.speak-btn.is-speaking {
+  animation: pulse 0.7s infinite alternate;
+}
+
+.clear-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px;
+  background: var(--limpar);
+  border: none;
+  border-radius: 50px;
+  color: var(--limpar-text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.12s, background 0.15s;
+}
+
+.clear-btn:hover {
+  background: var(--limpar-hover);
+  transform: scale(1.07);
+}
+
+.clear-btn.empty {
+  background: var(--limpar-empty);
+  color: var(--limpar-empty-text);
+  cursor: default;
+  pointer-events: none;
+}
+
+.clear-btn:active {
+  transform: scale(0.94);
+}
+
+@media (max-width: 768px) {
+  .phrase-bar {
+    margin: 0;
+    padding: 10px 14px;
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .phrase-bar {
+    margin: 0;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    gap: 8px;
+  }
+
+  .tokens-list {
+    min-height: 44px;
+    gap: 6px;
+  }
+
+  .empty-message {
+    font-size: 0.85rem;
+  }
+
+  .token {
+    padding: 5px 8px 5px 10px;
+    font-size: 0.8rem;
+  }
+
+  .token .token-image {
+    width: 18px;
+    height: 18px;
+  }
+
+  .token .remove-btn {
+    width: 18px;
+    height: 18px;
+    font-size: 0.65rem;
+  }
+
+  .controls {
+    gap: 6px;
+  }
+
+  .speak-btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .speak-btn span {
+    display: none;
+  }
+
+  .clear-btn {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}

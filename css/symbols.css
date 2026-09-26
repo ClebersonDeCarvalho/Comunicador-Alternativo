@@ -1,0 +1,154 @@
+.symbols-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 12px;
+  padding: 0 16px;
+  align-content: start;
+}
+
+.symbol-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 8px;
+  border-radius: var(--radius);
+  border: 2px solid transparent;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.14s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.14s, border-color 0.14s;
+  text-align: center;
+  min-height: 100px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 0.22s ease both;
+}
+
+.symbol-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+  transition: opacity 0.18s;
+}
+
+.symbol-card:hover::before {
+  opacity: 1;
+}
+
+.symbol-card:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.symbol-card:active {
+  transform: scale(0.94);
+}
+
+.symbol-image {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.symbol-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+}
+
+.symbol-card.cat-simnao {
+  background: var(--c-simnao-bg);
+  color: var(--c-simnao);
+  border-color: rgba(61, 158, 106, 0.4);
+}
+
+.symbol-card.cat-simnao::before {
+  background: rgba(61, 158, 106, 0.1);
+}
+
+.symbol-card.cat-simnao:hover {
+  border-color: var(--c-simnao);
+  box-shadow: 0 6px 22px rgba(61, 158, 106, 0.3);
+}
+
+.symbol-card.cat-alimentos {
+  background: var(--c-alimentos-bg);
+  color: var(--c-alimentos);
+  border-color: rgba(90, 126, 255, 0.4);
+}
+
+.symbol-card.cat-alimentos::before {
+  background: rgba(90, 126, 255, 0.1);
+}
+
+.symbol-card.cat-alimentos:hover {
+  border-color: var(--c-alimentos);
+  box-shadow: 0 6px 22px rgba(90, 126, 255, 0.3);
+}
+
+.symbol-card.cat-sentimentos {
+  background: var(--c-sentimentos-bg);
+  color: var(--c-sentimentos);
+  border-color: rgba(159, 161, 255, 0.4);
+}
+
+.symbol-card.cat-sentimentos::before {
+  background: rgba(159, 161, 255, 0.1);
+}
+
+.symbol-card.cat-sentimentos:hover {
+  border-color: var(--c-sentimentos);
+  box-shadow: 0 6px 22px rgba(159, 161, 255, 0.3);
+}
+
+.symbol-card.cat-acoes {
+  background: var(--c-acoes-bg);
+  color: var(--c-acoes);
+  border-color: rgba(74, 184, 255, 0.4);
+}
+
+.symbol-card.cat-acoes::before {
+  background: rgba(74, 184, 255, 0.1);
+}
+
+.symbol-card.cat-acoes:hover {
+  border-color: var(--c-acoes);
+  box-shadow: 0 6px 22px rgba(74, 184, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+  .symbols-grid {
+    padding: 0 4px;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .symbols-grid {
+    grid-template-columns: repeat(auto-fill, minmax(82px, 1fr));
+    gap: 8px;
+    padding: 0;
+  }
+
+  .symbol-card {
+    min-height: 84px;
+    padding: 10px 4px;
+    border-radius: var(--radius-sm);
+    gap: 6px;
+  }
+
+  .symbol-image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .symbol-text {
+    font-size: 0.72rem;
+  }
+}

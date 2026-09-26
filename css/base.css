@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #79d0ff7a;
+  --surface2: #BFDDF0;
+  --border: #8CC0EB;
+  --text: #636363;
+  --text-muted: #8a7a607a;
+  --radius: 24px;
+  --radius-sm: 16px;
+
+  --falar: #6641ff;
+  --falar-sombra: rgba(159, 161, 255, 0.45);
+  --falar-sombra-hover: rgba(159, 161, 255, 0.6);
+  --falar-text: #ffffff;
+
+  --limpar: #ff6d6d;
+  --limpar-hover: #ff6464;
+  --limpar-text: #ffffff;
+  --limpar-empty: #ffb7b7;
+  --limpar-empty-text: #ffffff;
+
+  --icon-header: #6a5fc1;
+
+  --token-remove: #ff6464;
+  --token-remove-hover: rgba(0, 0, 0, 0.5);
+
+  --c-simnao: #4a9e6b;
+  --c-simnao-bg: #d6f5e3;
+
+  --c-alimentos: #c45e88;
+  --c-alimentos-bg: #fdd9e8;
+
+  --c-sentimentos: #c97d2a;
+  --c-sentimentos-bg: #fde8c8;
+
+  --c-acoes: #6a5fc1;
+  --c-acoes-bg: #dcd8f8;
+
+  --c-all: #5a7a9e;
+  --c-all-bg: #8CC0EB;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-prime {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .container-prime {
+    padding: 16px 12px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-prime {
+    padding: 16px;
+    gap: 10px;
+  }
+}

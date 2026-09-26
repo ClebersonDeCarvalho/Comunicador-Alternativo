@@ -1,0 +1,120 @@
+.categories-nav {
+  display: flex;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--bg);
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.categories-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  background: var(--surface);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+
+.category-btn:hover {
+  border-color: var(--border);
+}
+
+.category-btn[data-category="all"]:hover {
+  border-color: var(--c-all);
+}
+
+.category-btn[data-category="simnao"] {
+  background: var(--c-simnao-bg);
+  color: var(--c-simnao);
+}
+
+.category-btn[data-category="simnao"]:hover {
+  border-color: var(--c-simnao);
+}
+
+.category-btn[data-category="alimentos"] {
+  background: var(--c-alimentos-bg);
+  color: var(--c-alimentos);
+}
+
+.category-btn[data-category="alimentos"]:hover {
+  border-color: var(--c-alimentos);
+}
+
+.category-btn[data-category="sentimentos"] {
+  background: var(--c-sentimentos-bg);
+  color: var(--c-sentimentos);
+}
+
+.category-btn[data-category="sentimentos"]:hover {
+  border-color: var(--c-sentimentos);
+}
+
+.category-btn[data-category="acoes"] {
+  background: var(--c-acoes-bg);
+  color: var(--c-acoes);
+}
+
+.category-btn[data-category="acoes"]:hover {
+  border-color: var(--c-acoes);
+}
+
+.category-btn[data-category="all"].active {
+  background: var(--c-all-bg);
+  color: var(--c-all);
+  border-color: var(--c-all);
+}
+
+.category-btn[data-category="simnao"].active {
+  background: var(--c-simnao-bg);
+  color: var(--c-simnao);
+  border-color: var(--c-simnao);
+}
+
+.category-btn[data-category="alimentos"].active {
+  background: var(--c-alimentos-bg);
+  color: var(--c-alimentos);
+  border-color: var(--c-alimentos);
+}
+
+.category-btn[data-category="sentimentos"].active {
+  background: var(--c-sentimentos-bg);
+  color: var(--c-sentimentos);
+  border-color: var(--c-sentimentos);
+}
+
+.category-btn[data-category="acoes"].active {
+  background: var(--c-acoes-bg);
+  color: var(--c-acoes);
+  border-color: var(--c-acoes);
+}
+
+@media (max-width: 768px) {
+  .categories-nav {
+    padding: 8px 4px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-btn {
+    padding: 7px 12px;
+    font-size: 0.8rem;
+    gap: 5px;
+  }
+}
