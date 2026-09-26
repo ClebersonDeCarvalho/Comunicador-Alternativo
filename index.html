@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunicador Alternativo</title>
+  <meta name="description" content="Comunicador alternativo e aumentativo com categorias, síntese de voz e interface simples." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/phrase-bar.css" />
+  <link rel="stylesheet" href="css/categories.css" />
+  <link rel="stylesheet" href="css/symbols.css" />
+</head>
+<body>
+  <div class="container-prime">
+    <header class="header">
+      <div class="header-title">
+        <span>Comunicador Alternativo</span>
+      </div>
+    </header>
+
+    <section class="phrase-bar" id="phraseBar" aria-label="Frase selecionada">
+      <div class="tokens-list" id="phraseTokens"></div>
+      <div class="controls">
+        <button class="speak-btn" id="btnSpeak" disabled title="Falar frase" aria-label="Falar frase">
+          <i class="fa-solid fa-volume-high"></i>
+          <span>Falar</span>
+        </button>
+        <button class="clear-btn" id="btnClearAll" title="Apagar tudo" aria-label="Apagar tudo">
+          <i class="fa-solid fa-trash"></i>
+        </button>
+      </div>
+    </section>
+
+    <nav class="categories-nav" id="categoriesNav" aria-label="Categorias">
+      <button class="category-btn" data-category="all" id="cat-all">
+        <i class="fa-solid fa-border-all"></i> Todas
+      </button>
+      <button class="category-btn" data-category="simnao" id="cat-simnao">
+        <i class="fa-solid fa-check-circle"></i> Sim / Não
+      </button>
+      <button class="category-btn" data-category="alimentos" id="cat-alimentos">
+        <i class="fa-solid fa-utensils"></i> Alimentos
+      </button>
+      <button class="category-btn" data-category="sentimentos" id="cat-sentimentos">
+        <i class="fa-solid fa-heart"></i> Sentimentos
+      </button>
+      <button class="category-btn" data-category="acoes" id="cat-acoes">
+        <i class="fa-solid fa-hand"></i> Ações
+      </button>
+    </nav>
+
+    <main class="symbols-grid" id="symbolsGrid" aria-label="Símbolos"></main>
+
+    <script type="module" src="js/app.js"></script>
+  </div>
+</body>
+</html>
